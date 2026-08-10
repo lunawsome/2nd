@@ -3,21 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ♡</title>
+
+<title>Happy 2nd Monthsary, Hon! ♡</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-    }
 
-    body {
+/* ============================= */
+/* GENERAL */
+/* ============================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     min-height: 100vh;
 
     background-image:
         linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.45)
+            rgba(0, 0, 0, 0.40),
+            rgba(0, 0, 0, 0.50)
         ),
         url("background.JPG");
 
@@ -26,358 +32,1187 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    color: #fff;
-    font-family: Georgia, serif;
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
     overflow-x: hidden;
 }
-    .stars {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
+
+
+/* ============================= */
+/* FLOATING HEARTS */
+/* ============================= */
+
+.heart {
+    position: fixed;
+
+    color: rgba(255, 210, 225, 0.65);
+
+    font-size: 18px;
+
+    pointer-events: none;
+
+    animation: floatHeart 8s infinite ease-in-out;
+
+    z-index: 1;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
     }
 
-    .star {
-        position: absolute;
-        color: #ffffff;
-        opacity: 0.5;
-        animation: twinkle 3s infinite ease-in-out;
+    20% {
+        opacity: 0.7;
     }
 
-    @keyframes twinkle {
-        0%, 100% { opacity: 0.15; transform: scale(1); }
-        50% { opacity: 0.8; transform: scale(1.4); }
+    80% {
+        opacity: 0.7;
     }
+
+    100% {
+        transform: translateY(-15vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+
+/* ============================= */
+/* MAIN CONTAINER */
+/* ============================= */
+
+.container {
+
+    width: 90%;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    padding: 40px 0;
+}
+
+
+/* ============================= */
+/* SCREENS */
+/* ============================= */
+
+.screen {
+
+    display: none;
+
+    width: 100%;
+
+    animation: fadeIn 0.8s ease;
+}
+
+.screen.active {
+
+    display: block;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ============================= */
+/* TEXT */
+/* ============================= */
+
+.small {
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    color: #f1cbd8;
+
+    margin-bottom: 15px;
+}
+
+
+h1 {
+
+    font-size: clamp(34px, 9vw, 58px);
+
+    font-weight: normal;
+
+    line-height: 1.2;
+
+    margin: 15px 0;
+}
+
+
+h2 {
+
+    font-size: clamp(27px, 7vw, 38px);
+
+    font-weight: normal;
+
+    margin: 15px 0 20px;
+}
+
+
+.subtitle {
+
+    color: #f1e5e9;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ============================= */
+/* OPEN BUTTON */
+/* ============================= */
+
+.open-button {
+
+    margin-top: 30px;
+
+    padding: 14px 32px;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+}
+
+
+.open-button:hover {
+
+    background: rgba(255,190,215,0.25);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(255,160,190,0.25);
+}
+
+
+/* ============================= */
+/* THREE CLICKABLE CARDS */
+/* ============================= */
+
+.cards {
+
+    margin-top: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.card {
+
+    padding: 25px 20px;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    background: rgba(20,10,15,0.35);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+
+    animation: gentleFloat 4s infinite ease-in-out;
+}
+
+
+.card:nth-child(2) {
+
+    animation-delay: 0.7s;
+}
+
+
+.card:nth-child(3) {
+
+    animation-delay: 1.4s;
+}
+
+
+@keyframes gentleFloat {
+
+    0%, 100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-7px);
+
+    }
+}
+
+
+.card:hover {
+
+    transform: scale(1.03) translateY(-5px);
+
+    background: rgba(255,190,215,0.18);
+
+    box-shadow:
+        0 12px 40px rgba(255,170,200,0.20);
+}
+
+
+.card-icon {
+
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+
+.card-title {
+
+    font-size: 21px;
+
+    color: #fff;
+}
+
+
+.card-description {
+
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color: #e1cdd5;
+}
+
+
+/* ============================= */
+/* CONTENT BOX */
+/* ============================= */
+
+.content {
+
+    padding: 30px 25px;
+
+    border-radius: 25px;
+
+    background: rgba(15,8,12,0.48);
+
+    border: 1px solid rgba(255,255,255,0.22);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    line-height: 1.9;
+
+    color: #f0e4e8;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.15);
+}
+
+
+/* ============================= */
+/* SONG */
+/* ============================= */
+
+.song-title {
+
+    font-size: 26px;
+
+    color: #f6dce6;
+
+    margin: 15px 0;
+}
+
+
+.song-note {
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+audio {
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+
+/* ============================= */
+/* REASONS */
+/* ============================= */
+
+.reason {
+
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    color: #f7dfe7;
+
+    animation: fadeIn 0.6s ease;
+
+    padding: 10px;
+}
+
+
+.counter {
+
+    font-size: 12px;
+
+    color: #bba2ac;
+
+    margin-top: 10px;
+}
+
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
+
+.button {
+
+    margin-top: 25px;
+
+    padding: 13px 27px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.button:hover {
+
+    background: rgba(255,190,215,0.2);
+
+    transform: translateY(-3px);
+}
+
+
+/* ============================= */
+/* BACK BUTTON */
+/* ============================= */
+
+.back {
+
+    margin-top: 25px;
+
+    background: none;
+
+    border: none;
+
+    color: #e3c5cf;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+
+.back:hover {
+
+    color: white;
+
+    transform: translateX(-3px);
+}
+
+
+/* ============================= */
+/* FINAL */
+/* ============================= */
+
+.final-heart {
+
+    font-size: 50px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%, 100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+    }
+}
+
+
+.signature {
+
+    margin-top: 30px;
+
+    font-style: italic;
+
+    color: #e0beca;
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 500px) {
 
     .container {
-        width: 90%;
-        max-width: 520px;
-        text-align: center;
-        position: relative;
-        z-index: 2;
+
+        width: 88%;
+
+        padding: 30px 0;
     }
 
-    .screen {
-        display: none;
-        animation: fadeIn 1s ease;
+    .content {
+
+        padding: 25px 20px;
     }
 
-    .screen.active {
-        display: block;
+    .card {
+
+        padding: 22px 15px;
     }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+}
 
-    .small {
-        font-size: 14px;
-        letter-spacing: 3px;
-        color: #c9a9b7;
-        text-transform: uppercase;
-    }
-
-    h1 {
-        font-size: 38px;
-        font-weight: normal;
-        margin: 18px 0;
-    }
-
-    h2 {
-        font-size: 28px;
-        font-weight: normal;
-        margin-bottom: 30px;
-    }
-
-    p {
-        line-height: 1.8;
-        color: #ddd;
-        font-size: 16px;
-    }
-
-    .song {
-        margin: 30px 0;
-        padding: 25px;
-        border: 1px solid rgba(255,255,255,0.15);
-        border-radius: 20px;
-        background: rgba(255,255,255,0.04);
-        box-shadow: 0 0 30px rgba(255, 180, 210, 0.05);
-    }
-
-    .song-title {
-        font-size: 22px;
-        margin: 10px 0;
-    }
-
-    button {
-        margin-top: 25px;
-        padding: 13px 25px;
-        border: 1px solid rgba(255,255,255,0.3);
-        border-radius: 30px;
-        background: transparent;
-        color: white;
-        font-family: Georgia, serif;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    button:hover {
-        background: rgba(255,255,255,0.1);
-        transform: scale(1.05);
-    }
-
-    .reason {
-        min-height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 21px;
-        line-height: 1.6;
-        padding: 20px;
-        color: #f3dce5;
-        animation: fadeIn 0.7s ease;
-    }
-
-    .counter {
-        font-size: 12px;
-        color: #8e7781;
-        margin-top: 10px;
-    }
-
-    .heart {
-        font-size: 35px;
-        animation: heartbeat 1.5s infinite;
-    }
-
-    @keyframes heartbeat {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.15); }
-    }
-
-    .final-message {
-        font-size: 17px;
-        line-height: 2;
-        color: #e9d8df;
-    }
-
-    .signature {
-        margin-top: 30px;
-        color: #b997a5;
-        font-style: italic;
-    }
 </style>
 </head>
 
+
 <body>
 
-<div class="stars"></div>
+
+<!-- ============================= -->
+<!-- FLOATING HEARTS -->
+<!-- ============================= -->
+
+<div class="heart" style="left:8%; animation-delay:0s;">♡</div>
+
+<div class="heart" style="left:22%; animation-delay:2s;">♡</div>
+
+<div class="heart" style="left:42%; animation-delay:4s;">♡</div>
+
+<div class="heart" style="left:63%; animation-delay:1s;">♡</div>
+
+<div class="heart" style="left:82%; animation-delay:3s;">♡</div>
+
 
 <div class="container">
 
-    <!-- INTRO -->
-    <section class="screen active" id="intro">
-        <div class="small">a little something for you</div>
 
-        <h1>♡</h1>
+<!-- ============================= -->
+<!-- INTRO PAGE -->
+<!-- ============================= -->
 
-        <h1>I made this for you.</h1>
+<section class="screen active" id="intro">
 
-        <p>
-            Nothing fancy.<br>
-            Just a few things I've always wanted you to know.
-        </p>
-
-        <button onclick="showScreen('song')">
-            open this ♡
-        </button>
-    </section>
+    <div class="small">
+        for the one I love
+    </div>
 
 
-    <!-- SONG -->
-    <section class="screen" id="song">
+    <h1>
 
-        <div class="small">something you remind me of</div>
+        Happy 2nd Monthsary,<br>
 
-        <div class="song">
-            <div class="heart">♫</div>
+        hon! ♡
 
-            <div class="song-title">
-                “Something You Remind Me Of”
+    </h1>
+
+
+    <p class="subtitle">
+
+        I made a little something for you.
+
+        <br>
+
+        Take your time.
+
+        <br>
+
+        There's a little piece of my heart
+        in here.
+
+    </p>
+
+
+    <button
+        class="open-button"
+        onclick="showScreen('menu')">
+
+        click to open ♡
+
+    </button>
+
+</section>
+
+
+
+<!-- ============================= -->
+<!-- MAIN MENU -->
+<!-- ============================= -->
+
+<section class="screen" id="menu">
+
+
+    <div class="small">
+        just for you
+    </div>
+
+
+    <h2>
+        Choose one ♡
+    </h2>
+
+
+    <p class="subtitle">
+
+        Three little things I made
+        especially for you.
+
+    </p>
+
+
+    <div class="cards">
+
+
+        <!-- LETTER -->
+
+        <div
+            class="card"
+            onclick="showScreen('letter')">
+
+
+            <div class="card-icon">
+                💌
             </div>
 
-            <p>
-                A song I dedicate to you.
-            </p>
 
-            <!-- OPTIONAL:
-            Put your own legally obtained audio file
-            in the same folder and rename it song.mp3
-            -->
+            <div class="card-title">
 
-            <audio id="music" controls style="width:100%; margin-top:15px;">
-                <source src="song.mp3" type="audio/mpeg">
-            </audio>
+                A Letter For You
+
+            </div>
+
+
+            <div class="card-description">
+
+                something I want you to know
+
+            </div>
+
         </div>
+
+
+
+        <!-- SONG -->
+
+        <div
+            class="card"
+            onclick="showScreen('song')">
+
+
+            <div class="card-icon">
+                🎵
+            </div>
+
+
+            <div class="card-title">
+
+                Something You Remind Me Of
+
+            </div>
+
+
+            <div class="card-description">
+
+                a song I dedicate to you
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WHY I LOVE YOU -->
+
+        <div
+            class="card"
+            onclick="showScreen('reasons')">
+
+
+            <div class="card-icon">
+                ♡
+            </div>
+
+
+            <div class="card-title">
+
+                Why I Love You
+
+            </div>
+
+
+            <div class="card-description">
+
+                just a few of the reasons
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================= -->
+<!-- LETTER -->
+<!-- ============================= -->
+
+<section class="screen" id="letter">
+
+
+    <div class="small">
+        a letter for you
+    </div>
+
+
+    <h2>
+        To my favorite person ♡
+    </h2>
+
+
+    <div class="content">
+
+
+        Happy 2nd Monthsary, hon. ♡
+
+
+        <br><br>
+
+
+        Two months may not sound like
+        a very long time, but somehow,
+        you've already become such a
+        special part of my life.
+
+
+        <br><br>
+
+
+        Thank you for all the little things
+        you do, for the laughs, the conversations,
+        the comfort, and even the simple moments
+        that we share.
+
+
+        <br><br>
+
+
+        I hope you know that I appreciate you
+        more than I sometimes know how to say.
+
+
+        <br><br>
+
+
+        Here's to more months,
+        more memories, more random conversations,
+        more laughs, and more moments with you.
+
+
+        <br><br>
+
+
+        I'm really happy it's you. ♡
+
+
+    </div>
+
+
+    <button
+        class="back"
+        onclick="showScreen('menu')">
+
+        ← go back
+
+    </button>
+
+</section>
+
+
+
+<!-- ============================= -->
+<!-- SONG -->
+<!-- ============================= -->
+
+<section class="screen" id="song">
+
+
+    <div class="small">
+        something you remind me of
+    </div>
+
+
+    <h2>
+        Something You Remind Me Of
+    </h2>
+
+
+    <div class="content">
+
+
+        <div class="song-note">
+            ♫
+        </div>
+
+
+        <div class="song-title">
+
+            “Something You Remind Me Of”
+
+        </div>
+
 
         <p>
-            Somehow, every time I hear this song,
-            there's a little part of me that thinks of you.
+
+            A song I dedicate to you. ♡
+
         </p>
 
-        <button onclick="showScreen('reasons')">
-            but there's more →
-        </button>
 
-    </section>
+        <!--
+        YOUR SONG
+
+        Make sure the file is named:
+
+        song.mp3
+
+        and is in the SAME FOLDER
+        as this HTML file.
+        -->
 
 
-    <!-- REASONS -->
-    <section class="screen" id="reasons">
+        <audio controls>
 
-        <div class="small">a few reasons</div>
+            <source
+                src="song.mp3"
+                type="audio/mpeg">
 
-        <h2>Why I Love You</h2>
+            Your browser does not support
+            the audio element.
 
-        <div class="reason" id="reasonText">
+        </audio>
+
+
+        <br><br>
+
+
+        Every time I hear this song,
+        somehow, I think of you.
+
+
+    </div>
+
+
+    <button
+        class="back"
+        onclick="showScreen('menu')">
+
+        ← go back
+
+    </button>
+
+</section>
+
+
+
+<!-- ============================= -->
+<!-- WHY I LOVE YOU -->
+<!-- ============================= -->
+
+<section class="screen" id="reasons">
+
+
+    <div class="small">
+        my favorite reasons
+    </div>
+
+
+    <h2>
+        Why I Love You ♡
+    </h2>
+
+
+    <div class="content">
+
+
+        <div
+            class="reason"
+            id="reasonText">
+
             Click the button.
+
         </div>
 
-        <div class="counter" id="counter">
+
+        <div
+            class="counter"
+            id="counter">
+
             0 / 10
+
         </div>
 
-        <button id="reasonButton" onclick="nextReason()">
+
+        <button
+            class="button"
+            id="reasonButton"
+            onclick="nextReason()">
+
             tell me why ♡
+
         </button>
 
-    </section>
+
+    </div>
 
 
-    <!-- FINAL -->
-    <section class="screen" id="final">
+    <button
+        class="back"
+        onclick="showScreen('menu')">
 
-        <div class="heart">♡</div>
+        ← go back
 
-        <h1>Happy Monthsary</h1>
+    </button>
 
-        <div class="final-message">
+</section>
 
-            I don't think I could ever list
-            every reason why I love you.
 
-            <br><br>
 
-            But if I could choose one thing
-            I hope you always remember...
+<!-- ============================= -->
+<!-- FINAL MESSAGE -->
+<!-- ============================= -->
 
-            <br><br>
+<section class="screen" id="final">
 
-            <strong>
-                I love you for who you are,
-                for who I am when I'm with you,
-                and for all the little moments
-                that somehow became my favorite memories.
 
-            </strong>
+    <div class="final-heart">
+        ♡
+    </div>
 
-            <br><br>
 
-            Thank you for being you.
+    <h1>
 
-            <br><br>
+        Happy 2nd Monthsary,<br>
+        hon!
 
-            I love you. Always. ♡
+    </h1>
 
-        </div>
 
-        <div class="signature">
-            — yours
-        </div>
+    <div class="content">
 
-    </section>
+
+        I could probably keep listing
+        reasons forever...
+
+
+        <br><br>
+
+
+        But if there's one thing I want
+        you to always remember:
+
+
+        <br><br>
+
+
+        <strong>
+
+        I love you for who you are,
+        for the way you make me feel,
+        and for all the little moments
+        that became special simply because
+        I got to share them with you.
+
+
+        </strong>
+
+
+        <br><br>
+
+
+        Thank you for being you.
+
+
+        <br><br>
+
+
+        I love you. Always. ♡
+
+
+    </div>
+
+
+    <div class="signature">
+
+        yours, always ♡
+
+    </div>
+
+
+    <button
+        class="back"
+        onclick="showScreen('menu')">
+
+        ← go back
+
+    </button>
+
+</section>
+
 
 </div>
 
 
+
 <script>
 
-const reasons = [
-    "I love the way you make me feel safe.",
-    "I love how you can make even an ordinary day feel special.",
-    "I love the way you listen to me.",
-    "I love how I can be completely myself around you.",
-    "I love your little habits that you probably don't even notice.",
-    "I love how you make me laugh, even when I don't feel like smiling.",
-    "I love how much you care about me.",
-    "I love all our random conversations and little moments.",
-    "I love the person you are, even on the days when you don't see how amazing you are.",
-    "And most of all, I love you simply because you're you."
-];
 
-let currentReason = 0;
+/* ============================= */
+/* SCREEN NAVIGATION */
+/* ============================= */
 
 function showScreen(id) {
 
-    document.querySelectorAll('.screen').forEach(screen => {
-        screen.classList.remove('active');
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
+
+            screen.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
     });
 
-    document.getElementById(id).classList.add('active');
 }
+
+
+
+/* ============================= */
+/* WHY I LOVE YOU */
+/* ============================= */
+
+
+const reasons = [
+
+
+    "I love the way you make me feel safe. ♡",
+
+
+    "I love how you can make ordinary days feel special.",
+
+
+    "I love the way you listen to me.",
+
+
+    "I love how I can be completely myself around you.",
+
+
+    "I love your little habits that you probably don't even notice.",
+
+
+    "I love how you make me laugh, even when I don't feel like smiling.",
+
+
+    "I love how much you care about me.",
+
+
+    "I love all our random conversations and little moments.",
+
+
+    "I love the person you are, even on the days when you don't see how amazing you are.",
+
+
+    "Most of all, I love you simply because you're you. ♡"
+
+
+];
+
+
+let currentReason = 0;
+
 
 
 function nextReason() {
 
+
     if (currentReason < reasons.length) {
 
-        document.getElementById("reasonText").innerHTML =
+
+        const text =
+            document.getElementById("reasonText");
+
+
+        text.style.animation = "none";
+
+
+        void text.offsetWidth;
+
+
+        text.style.animation =
+            "fadeIn 0.6s ease";
+
+
+        text.innerHTML =
             reasons[currentReason];
+
 
         currentReason++;
 
-        document.getElementById("counter").innerHTML =
-            currentReason + " / " + reasons.length;
+
+        document.getElementById("counter")
+            .innerHTML =
+            currentReason +
+            " / " +
+            reasons.length;
+
+
 
         if (currentReason === reasons.length) {
 
-            document.getElementById("reasonButton").innerHTML =
+
+            document
+                .getElementById("reasonButton")
+                .innerHTML =
                 "one last thing ♡";
 
-            document.getElementById("reasonButton").onclick =
+
+            document
+                .getElementById("reasonButton")
+                .onclick =
                 function() {
-                    showScreen('final');
+
+                    showScreen("final");
+
                 };
+
         }
+
     }
-}
 
-
-/* Create little stars */
-
-const starsContainer = document.querySelector(".stars");
-
-for (let i = 0; i < 45; i++) {
-
-    const star = document.createElement("span");
-
-    star.className = "star";
-    star.innerHTML = "✦";
-
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
-    star.style.fontSize = (Math.random() * 7 + 3) + "px";
-    star.style.animationDelay = Math.random() * 3 + "s";
-
-    starsContainer.appendChild(star);
 }
 
 </script>
+
 
 </body>
 </html>
