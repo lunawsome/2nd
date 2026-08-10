@@ -1,88 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy 2nd Monthsary, Hon! ♡</title>
 
+
 <style>
 
-/* ============================= */
-/* GENERAL */
-/* ============================= */
+/* =====================================
+   BASIC
+===================================== */
 
 * {
     box-sizing: border-box;
 }
 
 body {
+
     margin: 0;
+
     min-height: 100vh;
 
     background-image:
+
         linear-gradient(
-            rgba(0, 0, 0, 0.40),
-            rgba(0, 0, 0, 0.50)
+            rgba(0,0,0,0.38),
+            rgba(0,0,0,0.48)
         ),
+
         url("background.JPG");
 
     background-size: cover;
+
     background-position: center;
+
     background-repeat: no-repeat;
+
     background-attachment: fixed;
 
     color: white;
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     overflow-x: hidden;
 }
 
 
-/* ============================= */
-/* FLOATING HEARTS */
-/* ============================= */
-
-.heart {
-    position: fixed;
-
-    color: rgba(255, 210, 225, 0.65);
-
-    font-size: 18px;
-
-    pointer-events: none;
-
-    animation: floatHeart 8s infinite ease-in-out;
-
-    z-index: 1;
-}
-
-@keyframes floatHeart {
-
-    0% {
-        transform: translateY(110vh) rotate(0deg);
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 0.7;
-    }
-
-    80% {
-        opacity: 0.7;
-    }
-
-    100% {
-        transform: translateY(-15vh) rotate(180deg);
-        opacity: 0;
-    }
-}
-
-
-/* ============================= */
-/* MAIN CONTAINER */
-/* ============================= */
+/* =====================================
+   CONTAINER
+===================================== */
 
 .container {
 
@@ -90,9 +63,9 @@ body {
 
     max-width: 650px;
 
-    margin: auto;
-
     min-height: 100vh;
+
+    margin: auto;
 
     display: flex;
 
@@ -110,9 +83,9 @@ body {
 }
 
 
-/* ============================= */
-/* SCREENS */
-/* ============================= */
+/* =====================================
+   SCREENS
+===================================== */
 
 .screen {
 
@@ -120,7 +93,8 @@ body {
 
     width: 100%;
 
-    animation: fadeIn 0.8s ease;
+    animation:
+        fadeIn 0.8s ease;
 }
 
 .screen.active {
@@ -135,7 +109,8 @@ body {
 
         opacity: 0;
 
-        transform: translateY(25px);
+        transform:
+            translateY(20px);
 
     }
 
@@ -143,16 +118,17 @@ body {
 
         opacity: 1;
 
-        transform: translateY(0);
+        transform:
+            translateY(0);
 
     }
 
 }
 
 
-/* ============================= */
-/* TEXT */
-/* ============================= */
+/* =====================================
+   TEXT
+===================================== */
 
 .small {
 
@@ -160,237 +136,468 @@ body {
 
     letter-spacing: 4px;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    color: #f1cbd8;
+    color: #f0cbd7;
 
-    margin-bottom: 15px;
 }
 
 
 h1 {
 
-    font-size: clamp(34px, 9vw, 58px);
+    font-size:
+        clamp(35px, 9vw, 58px);
 
     font-weight: normal;
 
     line-height: 1.2;
 
-    margin: 15px 0;
+    margin: 18px 0;
+
 }
 
 
 h2 {
 
-    font-size: clamp(27px, 7vw, 38px);
+    font-size:
+        clamp(28px, 7vw, 40px);
 
     font-weight: normal;
 
-    margin: 15px 0 20px;
 }
 
 
 .subtitle {
 
-    color: #f1e5e9;
-
-    font-size: 16px;
+    color: #f1e4e8;
 
     line-height: 1.8;
 
+    font-size: 16px;
 }
 
 
-/* ============================= */
-/* OPEN BUTTON */
-/* ============================= */
+/* =====================================
+   OPEN BUTTON
+===================================== */
 
 .open-button {
 
     margin-top: 30px;
 
-    padding: 14px 32px;
-
-    border: 1px solid rgba(255,255,255,0.4);
+    padding:
+        14px 32px;
 
     border-radius: 50px;
 
-    background: rgba(255,255,255,0.12);
+    border:
+        1px solid
+        rgba(255,255,255,0.4);
 
-    backdrop-filter: blur(10px);
+    background:
+        rgba(255,255,255,0.12);
+
+    backdrop-filter:
+        blur(10px);
 
     color: white;
 
     font-family: Georgia, serif;
 
-    font-size: 15px;
-
     cursor: pointer;
 
-    transition: all 0.4s ease;
+    transition: 0.4s;
 }
 
 
 .open-button:hover {
 
-    background: rgba(255,190,215,0.25);
+    background:
+        rgba(255,190,215,0.22);
 
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 
-    box-shadow:
-        0 10px 30px rgba(255,160,190,0.25);
 }
 
 
-/* ============================= */
-/* THREE CLICKABLE CARDS */
-/* ============================= */
+/* =====================================
+   FLOATING "PICTURE" BUTTONS
+===================================== */
 
-.cards {
+.picture-buttons {
 
-    margin-top: 40px;
+    margin-top: 45px;
 
     display: flex;
 
-    flex-direction: column;
+    justify-content: center;
 
-    gap: 18px;
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
 }
 
 
-.card {
+/* EACH OBJECT */
 
-    padding: 25px 20px;
+.picture-button {
 
-    border-radius: 25px;
+    width: 160px;
 
-    border: 1px solid rgba(255,255,255,0.3);
+    height: 180px;
 
-    background: rgba(20,10,15,0.35);
-
-    backdrop-filter: blur(12px);
-
-    -webkit-backdrop-filter: blur(12px);
+    position: relative;
 
     cursor: pointer;
 
-    transition: all 0.4s ease;
+    transition:
+        transform 0.4s ease;
 
-    animation: gentleFloat 4s infinite ease-in-out;
+    animation:
+        floating 4s infinite ease-in-out;
 }
 
 
-.card:nth-child(2) {
+.picture-button:nth-child(2) {
 
-    animation-delay: 0.7s;
+    animation-delay:
+        0.8s;
 }
 
 
-.card:nth-child(3) {
+.picture-button:nth-child(3) {
 
-    animation-delay: 1.4s;
+    animation-delay:
+        1.6s;
 }
 
 
-@keyframes gentleFloat {
+@keyframes floating {
 
-    0%, 100% {
+    0%,100% {
 
-        transform: translateY(0);
+        transform:
+            translateY(0)
+            rotate(-2deg);
 
     }
 
     50% {
 
-        transform: translateY(-7px);
+        transform:
+            translateY(-10px)
+            rotate(2deg);
 
     }
 }
 
 
-.card:hover {
+.picture-button:hover {
 
-    transform: scale(1.03) translateY(-5px);
+    transform:
+        translateY(-12px)
+        scale(1.08)
+        rotate(0deg);
 
-    background: rgba(255,190,215,0.18);
+}
+
+
+/* =====================================
+   LETTER OBJECT
+===================================== */
+
+.letter-picture {
+
+    width: 150px;
+
+    height: 115px;
+
+    margin: auto;
+
+    position: relative;
+
+    top: 10px;
+
+    background:
+        #f3d9df;
+
+    border-radius:
+        8px;
 
     box-shadow:
-        0 12px 40px rgba(255,170,200,0.20);
+        0 15px 30px
+        rgba(0,0,0,0.3);
+
 }
 
 
-.card-icon {
+/* ENVELOPE */
 
-    font-size: 32px;
+.letter-picture::before {
 
-    margin-bottom: 10px;
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        75px solid transparent;
+
+    border-right:
+        75px solid transparent;
+
+    border-top:
+        60px solid #d8a9b7;
+
 }
 
 
-.card-title {
+.letter-picture::after {
 
-    font-size: 21px;
+    content: "♡";
 
-    color: #fff;
+    position: absolute;
+
+    left: 50%;
+
+    top: 47px;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 25px;
+
+    color: #9b536a;
+
 }
 
 
-.card-description {
+.object-title {
 
-    margin-top: 8px;
+    margin-top: 20px;
 
-    font-size: 13px;
+    font-size: 17px;
 
-    color: #e1cdd5;
+    color: white;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,0.5);
+
 }
 
 
-/* ============================= */
-/* CONTENT BOX */
-/* ============================= */
+/* =====================================
+   SONG OBJECT
+===================================== */
+
+.song-picture {
+
+    width: 135px;
+
+    height: 135px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d6a2b5,
+            #7d5065
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.4);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.song-picture::before {
+
+    content: "♫";
+
+    width: 75px;
+
+    height: 75px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.18);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 38px;
+
+    color: white;
+
+}
+
+
+/* =====================================
+   REASONS OBJECT
+===================================== */
+
+.reasons-picture {
+
+    width: 135px;
+
+    height: 145px;
+
+    margin: auto;
+
+    background:
+        #ead5c4;
+
+    border-radius:
+        8px;
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,0.35);
+
+    position: relative;
+
+}
+
+
+.reasons-picture::before {
+
+    content:
+        "♡  ♡  ♡";
+
+    position: absolute;
+
+    top: 30px;
+
+    left: 0;
+
+    right: 0;
+
+    color:
+        #b47788;
+
+    font-size: 18px;
+
+}
+
+
+.reasons-picture::after {
+
+    content:
+        "love";
+
+    position: absolute;
+
+    top: 72px;
+
+    left: 0;
+
+    right: 0;
+
+    color:
+        #855363;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+}
+
+
+/* =====================================
+   CONTENT BOX
+===================================== */
 
 .content {
 
-    padding: 30px 25px;
+    padding:
+        28px 24px;
 
-    border-radius: 25px;
+    border-radius:
+        25px;
 
-    background: rgba(15,8,12,0.48);
+    background:
+        rgba(15,8,12,0.50);
 
-    border: 1px solid rgba(255,255,255,0.22);
+    border:
+        1px solid
+        rgba(255,255,255,0.22);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
-    -webkit-backdrop-filter: blur(12px);
+    line-height:
+        1.9;
 
-    line-height: 1.9;
-
-    color: #f0e4e8;
+    color:
+        #f2e4e8;
 
     box-shadow:
-        0 10px 40px rgba(0,0,0,0.15);
+        0 15px 40px
+        rgba(0,0,0,0.2);
 }
 
 
-/* ============================= */
-/* SONG */
-/* ============================= */
+/* =====================================
+   LETTER
+===================================== */
+
+.letter-text {
+
+    text-align:
+        left;
+
+    line-height:
+        2;
+
+}
+
+
+/* =====================================
+   SONG
+===================================== */
 
 .song-title {
 
-    font-size: 26px;
+    font-size:
+        25px;
 
-    color: #f6dce6;
+    color:
+        #f5dce5;
 
-    margin: 15px 0;
+    margin:
+        15px 0;
 }
 
 
 .song-note {
 
-    font-size: 35px;
+    font-size:
+        40px;
 
-    margin-bottom: 10px;
 }
 
 
@@ -398,208 +605,194 @@ audio {
 
     width: 100%;
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 }
 
 
-/* ============================= */
-/* REASONS */
-/* ============================= */
+/* =====================================
+   REASONS LIST
+===================================== */
 
-.reason {
+.reasons-list {
 
-    min-height: 120px;
+    text-align:
+        left;
 
-    display: flex;
+    list-style:
+        none;
 
-    align-items: center;
+    padding:
+        0;
 
-    justify-content: center;
-
-    font-size: 20px;
-
-    line-height: 1.7;
-
-    color: #f7dfe7;
-
-    animation: fadeIn 0.6s ease;
-
-    padding: 10px;
+    margin:
+        0;
 }
 
 
-.counter {
+.reasons-list li {
 
-    font-size: 12px;
+    padding:
+        14px 0 14px 32px;
 
-    color: #bba2ac;
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.10);
 
-    margin-top: 10px;
+    position:
+        relative;
+
+    line-height:
+        1.6;
+
+    color:
+        #f1dfe5;
+
 }
 
 
-/* ============================= */
-/* BUTTON */
-/* ============================= */
+.reasons-list li::before {
 
-.button {
+    content:
+        "♡";
 
-    margin-top: 25px;
+    position:
+        absolute;
 
-    padding: 13px 27px;
+    left:
+        4px;
 
-    border-radius: 30px;
+    color:
+        #e8aebe;
 
-    border: 1px solid rgba(255,255,255,0.35);
+    font-size:
+        18px;
 
-    background: rgba(255,255,255,0.08);
-
-    color: white;
-
-    font-family: Georgia, serif;
-
-    cursor: pointer;
-
-    transition: 0.3s;
 }
 
 
-.button:hover {
+.reasons-list li:last-child {
 
-    background: rgba(255,190,215,0.2);
+    border-bottom:
+        none;
 
-    transform: translateY(-3px);
 }
 
 
-/* ============================= */
-/* BACK BUTTON */
-/* ============================= */
+/* =====================================
+   BACK BUTTON
+===================================== */
 
 .back {
 
-    margin-top: 25px;
+    margin-top:
+        25px;
 
-    background: none;
+    background:
+        none;
 
-    border: none;
+    border:
+        none;
 
-    color: #e3c5cf;
+    color:
+        #e2c3ce;
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    transition: 0.3s;
 }
 
 
 .back:hover {
 
-    color: white;
+    color:
+        white;
 
-    transform: translateX(-3px);
 }
 
 
-/* ============================= */
-/* FINAL */
-/* ============================= */
+/* =====================================
+   MOBILE
+===================================== */
 
-.final-heart {
+@media (max-width: 600px) {
 
-    font-size: 50px;
+    .picture-buttons {
 
-    animation: heartbeat 1.5s infinite;
-}
-
-
-@keyframes heartbeat {
-
-    0%, 100% {
-
-        transform: scale(1);
+        gap:
+            10px;
 
     }
 
-    50% {
 
-        transform: scale(1.15);
+    .picture-button {
+
+        width:
+            140px;
+
+        height:
+            165px;
 
     }
-}
 
 
-.signature {
+    .letter-picture {
 
-    margin-top: 30px;
+        width:
+            130px;
 
-    font-style: italic;
+        height:
+            100px;
 
-    color: #e0beca;
-}
-
-
-/* ============================= */
-/* MOBILE */
-/* ============================= */
-
-@media (max-width: 500px) {
-
-    .container {
-
-        width: 88%;
-
-        padding: 30px 0;
     }
 
-    .content {
 
-        padding: 25px 20px;
-    }
+    .letter-picture::before {
 
-    .card {
+        border-left:
+            65px solid transparent;
 
-        padding: 22px 15px;
+        border-right:
+            65px solid transparent;
+
+        border-top:
+            52px solid #d8a9b7;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ============================= -->
-<!-- FLOATING HEARTS -->
-<!-- ============================= -->
-
-<div class="heart" style="left:8%; animation-delay:0s;">♡</div>
-
-<div class="heart" style="left:22%; animation-delay:2s;">♡</div>
-
-<div class="heart" style="left:42%; animation-delay:4s;">♡</div>
-
-<div class="heart" style="left:63%; animation-delay:1s;">♡</div>
-
-<div class="heart" style="left:82%; animation-delay:3s;">♡</div>
-
-
 <div class="container">
 
 
-<!-- ============================= -->
-<!-- INTRO PAGE -->
-<!-- ============================= -->
+<!-- =====================================
+     HOME
+===================================== -->
 
-<section class="screen active" id="intro">
+<section
+    class="screen active"
+    id="intro">
+
 
     <div class="small">
-        for the one I love
+
+        for you, hon ♡
+
     </div>
 
 
@@ -607,23 +800,19 @@ audio {
 
         Happy 2nd Monthsary,<br>
 
-        hon! ♡
+        hon!
 
     </h1>
 
 
     <p class="subtitle">
 
-        I made a little something for you.
+        I made a little something
+        just for you.
 
-        <br>
+        <br><br>
 
-        Take your time.
-
-        <br>
-
-        There's a little piece of my heart
-        in here.
+        Click below. ♡
 
     </p>
 
@@ -632,66 +821,57 @@ audio {
         class="open-button"
         onclick="showScreen('menu')">
 
-        click to open ♡
+        open this ♡
 
     </button>
+
 
 </section>
 
 
 
-<!-- ============================= -->
-<!-- MAIN MENU -->
-<!-- ============================= -->
+<!-- =====================================
+     THREE OBJECTS
+===================================== -->
 
-<section class="screen" id="menu">
+<section
+    class="screen"
+    id="menu">
 
 
     <div class="small">
-        just for you
+
+        a little something for you
+
     </div>
 
 
     <h2>
-        Choose one ♡
+
+        Pick one ♡
+
     </h2>
 
 
-    <p class="subtitle">
-
-        Three little things I made
-        especially for you.
-
-    </p>
-
-
-    <div class="cards">
+    <div class="picture-buttons">
 
 
         <!-- LETTER -->
 
         <div
-            class="card"
+            class="picture-button"
             onclick="showScreen('letter')">
 
 
-            <div class="card-icon">
-                💌
-            </div>
+            <div class="letter-picture"></div>
 
 
-            <div class="card-title">
+            <div class="object-title">
 
                 A Letter For You
 
             </div>
 
-
-            <div class="card-description">
-
-                something I want you to know
-
-            </div>
 
         </div>
 
@@ -700,84 +880,78 @@ audio {
         <!-- SONG -->
 
         <div
-            class="card"
+            class="picture-button"
             onclick="showScreen('song')">
 
 
-            <div class="card-icon">
-                🎵
-            </div>
+            <div class="song-picture"></div>
 
 
-            <div class="card-title">
+            <div class="object-title">
 
-                Something You Remind Me Of
+                Song For You
 
             </div>
 
-
-            <div class="card-description">
-
-                a song I dedicate to you
-
-            </div>
 
         </div>
 
 
 
-        <!-- WHY I LOVE YOU -->
+        <!-- REASONS -->
 
         <div
-            class="card"
+            class="picture-button"
             onclick="showScreen('reasons')">
 
 
-            <div class="card-icon">
-                ♡
-            </div>
+            <div class="reasons-picture"></div>
 
 
-            <div class="card-title">
+            <div class="object-title">
 
                 Why I Love You
 
             </div>
 
 
-            <div class="card-description">
-
-                just a few of the reasons
-
-            </div>
-
         </div>
 
 
     </div>
 
+
 </section>
 
 
 
-<!-- ============================= -->
-<!-- LETTER -->
-<!-- ============================= -->
+<!-- =====================================
+     LETTER
+===================================== -->
 
-<section class="screen" id="letter">
+<section
+    class="screen"
+    id="letter">
 
 
     <div class="small">
+
         a letter for you
+
     </div>
 
 
     <h2>
+
         To my favorite person ♡
+
     </h2>
 
 
     <div class="content">
+
+
+        <div class="letter-text">
 
 
         Happy 2nd Monthsary, hon. ♡
@@ -811,9 +985,9 @@ audio {
         <br><br>
 
 
-        Here's to more months,
-        more memories, more random conversations,
-        more laughs, and more moments with you.
+        Here's to more months, more memories,
+        more random conversations, more laughs,
+        and more moments with you.
 
 
         <br><br>
@@ -822,6 +996,8 @@ audio {
         I'm really happy it's you. ♡
 
 
+        </div>
+
     </div>
 
 
@@ -829,28 +1005,35 @@ audio {
         class="back"
         onclick="showScreen('menu')">
 
-        ← go back
+        ← back
 
     </button>
+
 
 </section>
 
 
 
-<!-- ============================= -->
-<!-- SONG -->
-<!-- ============================= -->
+<!-- =====================================
+     SONG
+===================================== -->
 
-<section class="screen" id="song">
+<section
+    class="screen"
+    id="song">
 
 
     <div class="small">
+
         something you remind me of
+
     </div>
 
 
     <h2>
+
         Something You Remind Me Of
+
     </h2>
 
 
@@ -858,7 +1041,9 @@ audio {
 
 
         <div class="song-note">
+
             ♫
+
         </div>
 
 
@@ -876,18 +1061,6 @@ audio {
         </p>
 
 
-        <!--
-        YOUR SONG
-
-        Make sure the file is named:
-
-        song.mp3
-
-        and is in the SAME FOLDER
-        as this HTML file.
-        -->
-
-
         <audio controls>
 
             <source
@@ -895,7 +1068,7 @@ audio {
                 type="audio/mpeg">
 
             Your browser does not support
-            the audio element.
+            the audio player.
 
         </audio>
 
@@ -914,60 +1087,123 @@ audio {
         class="back"
         onclick="showScreen('menu')">
 
-        ← go back
+        ← back
 
     </button>
+
 
 </section>
 
 
 
-<!-- ============================= -->
-<!-- WHY I LOVE YOU -->
-<!-- ============================= -->
+<!-- =====================================
+     REASONS
+===================================== -->
 
-<section class="screen" id="reasons">
+<section
+    class="screen"
+    id="reasons">
 
 
     <div class="small">
-        my favorite reasons
+
+        little things I love about you
+
     </div>
 
 
     <h2>
+
         Why I Love You ♡
+
     </h2>
 
 
     <div class="content">
 
 
-        <div
-            class="reason"
-            id="reasonText">
-
-            Click the button.
-
-        </div>
+        <ul class="reasons-list">
 
 
-        <div
-            class="counter"
-            id="counter">
+            <li>
 
-            0 / 10
+                I love the way you make me feel safe.
 
-        </div>
+            </li>
 
 
-        <button
-            class="button"
-            id="reasonButton"
-            onclick="nextReason()">
+            <li>
 
-            tell me why ♡
+                I love how you can make
+                ordinary days feel special.
 
-        </button>
+            </li>
+
+
+            <li>
+
+                I love the way you listen to me.
+
+            </li>
+
+
+            <li>
+
+                I love how I can be completely
+                myself around you.
+
+            </li>
+
+
+            <li>
+
+                I love your little habits
+                that you probably don't even notice.
+
+            </li>
+
+
+            <li>
+
+                I love how you make me laugh,
+                even when I don't feel like smiling.
+
+            </li>
+
+
+            <li>
+
+                I love how much you care about me.
+
+            </li>
+
+
+            <li>
+
+                I love all our random conversations
+                and little moments.
+
+            </li>
+
+
+            <li>
+
+                I love the person you are,
+                even on the days when you don't
+                see how amazing you are.
+
+            </li>
+
+
+            <li>
+
+                Most of all, I love you simply
+                because you're you. ♡
+
+            </li>
+
+
+        </ul>
 
 
     </div>
@@ -977,92 +1213,10 @@ audio {
         class="back"
         onclick="showScreen('menu')">
 
-        ← go back
+        ← back
 
     </button>
 
-</section>
-
-
-
-<!-- ============================= -->
-<!-- FINAL MESSAGE -->
-<!-- ============================= -->
-
-<section class="screen" id="final">
-
-
-    <div class="final-heart">
-        ♡
-    </div>
-
-
-    <h1>
-
-        Happy 2nd Monthsary,<br>
-        hon!
-
-    </h1>
-
-
-    <div class="content">
-
-
-        I could probably keep listing
-        reasons forever...
-
-
-        <br><br>
-
-
-        But if there's one thing I want
-        you to always remember:
-
-
-        <br><br>
-
-
-        <strong>
-
-        I love you for who you are,
-        for the way you make me feel,
-        and for all the little moments
-        that became special simply because
-        I got to share them with you.
-
-
-        </strong>
-
-
-        <br><br>
-
-
-        Thank you for being you.
-
-
-        <br><br>
-
-
-        I love you. Always. ♡
-
-
-    </div>
-
-
-    <div class="signature">
-
-        yours, always ♡
-
-    </div>
-
-
-    <button
-        class="back"
-        onclick="showScreen('menu')">
-
-        ← go back
-
-    </button>
 
 </section>
 
@@ -1074,16 +1228,12 @@ audio {
 <script>
 
 
-/* ============================= */
-/* SCREEN NAVIGATION */
-/* ============================= */
-
 function showScreen(id) {
 
 
     document
         .querySelectorAll(".screen")
-        .forEach(screen => {
+        .forEach(function(screen) {
 
             screen.classList.remove("active");
 
@@ -1106,113 +1256,9 @@ function showScreen(id) {
 }
 
 
-
-/* ============================= */
-/* WHY I LOVE YOU */
-/* ============================= */
-
-
-const reasons = [
-
-
-    "I love the way you make me feel safe. ♡",
-
-
-    "I love how you can make ordinary days feel special.",
-
-
-    "I love the way you listen to me.",
-
-
-    "I love how I can be completely myself around you.",
-
-
-    "I love your little habits that you probably don't even notice.",
-
-
-    "I love how you make me laugh, even when I don't feel like smiling.",
-
-
-    "I love how much you care about me.",
-
-
-    "I love all our random conversations and little moments.",
-
-
-    "I love the person you are, even on the days when you don't see how amazing you are.",
-
-
-    "Most of all, I love you simply because you're you. ♡"
-
-
-];
-
-
-let currentReason = 0;
-
-
-
-function nextReason() {
-
-
-    if (currentReason < reasons.length) {
-
-
-        const text =
-            document.getElementById("reasonText");
-
-
-        text.style.animation = "none";
-
-
-        void text.offsetWidth;
-
-
-        text.style.animation =
-            "fadeIn 0.6s ease";
-
-
-        text.innerHTML =
-            reasons[currentReason];
-
-
-        currentReason++;
-
-
-        document.getElementById("counter")
-            .innerHTML =
-            currentReason +
-            " / " +
-            reasons.length;
-
-
-
-        if (currentReason === reasons.length) {
-
-
-            document
-                .getElementById("reasonButton")
-                .innerHTML =
-                "one last thing ♡";
-
-
-            document
-                .getElementById("reasonButton")
-                .onclick =
-                function() {
-
-                    showScreen("final");
-
-                };
-
-        }
-
-    }
-
-}
-
 </script>
 
 
 </body>
+
 </html>
